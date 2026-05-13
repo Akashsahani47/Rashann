@@ -67,7 +67,7 @@ export default function LoginPage() {
       Cookies.set('token', token);
       Cookies.set('user', JSON.stringify(user));
       router.push(
-        user.userType === 'buyer' ? '/buyer/dashboard' : '/shopkeeper/dashboard'
+        user.userType === 'buyer' ? '/dashboard/buyer' : '/dashboard/shopkeeper'
       );
     } catch (err) {
       setError(err.response?.data?.message || 'Something went wrong. Try again.');
